@@ -37,9 +37,16 @@ def isInvalidMatch(listOfNames):
         if(name1 == name2):
             return True
     return False
-    
-contacts = phonebook() 
 def pairs():
     listOfNames = list(contacts.keys())
     pairs = generatePairs(listOfNames)
     return pairs
+def ComposeMsg(santa,recipent):
+    return "Hello " + santa + " your recipient is " + recipent
+
+if __name__ == "__main__":
+    contacts = phonebook() 
+    result = pairs()
+    for santa, recipient in result:
+        msg = ComposeMsg(santa, recipient)
+        print msg +" [" + str(contacts[santa])+ "]"
